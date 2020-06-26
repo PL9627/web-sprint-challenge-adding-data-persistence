@@ -26,7 +26,7 @@ exports.up = async function (knex) {
     table.boolean("completed").notNull().defaultTo("false");
   });
 
-  await knex.schema.createTable("prjects_resources", (table) => {
+  await knex.schema.createTable("projects_resources", (table) => {
     table
       .integer("project_ID")
       .references("Id")
@@ -44,10 +44,7 @@ exports.up = async function (knex) {
 
 exports.down = async function (knex) {
   await knex.schema.dropTableIfExists("projects_resources");
-  
   await knex.schema.dropTableIfExists("tasks");
-  
   await knex.schema.dropTableIfExists("resources");
-  
   await knex.schema.dropTableIfExists("projects");
 };
