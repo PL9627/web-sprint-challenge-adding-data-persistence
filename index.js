@@ -1,11 +1,18 @@
 const express = require("express");
 const helmet = require("helmet");
+const projectsRouter = require("./routers/project-router");
+const resourcesRouter = require("./routers/resources-router");
+const tasksRouter = require("./routers/tasks-router");
 
 const server = express();
 const port = process.env.PORT || 3000;
 
 server.use(helmet());
 server.use(express.json());
+
+server.use(projectsRouter);
+server.use(resourcesRouter);
+server.use(tasksRouter);
 
 server.use((err, req, res, next) => {
   console.log(err);

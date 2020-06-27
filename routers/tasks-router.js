@@ -6,7 +6,7 @@ const router = express.Router();
 //project endpoints
 router.get("/tasks", async (req, res, next) => {
   try {
-    const task = await Tasks.findProject();
+    const task = await Tasks.findTasks();
     res.json(task);
   } catch (err) {
     next(err);
@@ -15,9 +15,11 @@ router.get("/tasks", async (req, res, next) => {
 
 router.post("/tasks", async (req, res, next) => {
   try {
-    const task = await Tasks.addProject(req.body);
+    const task = await Tasks.addTask(req.body);
     res.status(201).json(task);
   } catch (err) {
     next(err);
   }
 });
+
+module.exports = router;

@@ -21,3 +21,5 @@ router.post("/projects", async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = router;

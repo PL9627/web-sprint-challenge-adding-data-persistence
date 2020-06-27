@@ -6,7 +6,7 @@ const router = express.Router();
 //resources endpoints
 router.get("/resources", async (req, res, next) => {
   try {
-    const resource = await Resources.findProject();
+    const resource = await Resources.findResources();
     res.json(resource);
   } catch (err) {
     next(err);
@@ -15,9 +15,11 @@ router.get("/resources", async (req, res, next) => {
 
 router.post("/resources", async (req, res, next) => {
   try {
-    const resource = await Resources.addProject(req.body);
+    const resource = await Resources.addResources(req.body);
     res.status(201).json(resource);
   } catch (err) {
     next(err);
   }
 });
+
+module.exports = router;
