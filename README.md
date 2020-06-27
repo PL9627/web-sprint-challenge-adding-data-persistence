@@ -48,11 +48,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain the difference between `Relational Databases` and `SQL`.
 
+  `SQL` is the language that used to maintain `Relational Databases`. `Relational Databases` is similar to Excel.
+
 2. Why do tables need a `primary key`?
+
+  `Primary keys` help identify each unique database entry.
 
 3. What is the name given to a table column that references the primary key on another table.
 
+It is called a `foreign key`.
+
 4. What do we need in order to have a _many to many_ relationship between two tables.
+
+  A `reference table`.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
